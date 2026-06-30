@@ -114,17 +114,30 @@
             </div>
         </section>
         <!-- Intro -->
-        <section class="intro section-pad">
-            <div class="container grid-2-col align-center">
-                <div class="reveal-mask">
-                    <img src="21.jpeg" alt="Model wearing ALA wooden frames with vivid lenses" class="parallax-img" style="border-radius: 4px; min-height: 60vh; object-position: center;">
-                </div>
-                <div class="reveal-up pl-2">
-                    <h2 class="editorial-text">There are objects you wear.<br>And there are objects you experience.</h2>
-                    <p class="editorial-sub mt-4">A striking contrast of nature and vision.</p>
-                    <p class="editorial-body mt-4" style="margin: 0; max-width: 100%;">The natural, grounding warmth of handcrafted wood against the bold clarity of precision lenses creates a distinct, personal signature. Each frame carries not just form—but presence.</p>
-                    <p class="editorial-sub italic mt-4">Seen. Felt. Lived.</p>
-                </div>
+        <section class="intro"
+            style="position: relative; width: 100vw; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: flex-end;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0;">
+                <img src="22.jpeg" alt="Model wearing ALA wooden frames with vivid lenses"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: 25% center; min-height: 100vh;">
+            </div>
+
+            <!-- Dark gradient overlay for text legibility (fades from right to left) -->
+            <div
+                style="position: absolute; inset: 0; background: linear-gradient(to left, rgba(14, 9, 6, 0.95) 0%, rgba(14, 9, 6, 0.4) 55%, transparent 100%); z-index: 1;">
+            </div>
+
+            <div class="reveal-up"
+                style="position: relative; z-index: 2; margin: 0 8% 0 auto; max-width: 550px; text-align: left;">
+                <h2 class="editorial-text"
+                    style="color: var(--white); font-size: clamp(2.2rem, 4vw, 3.5rem); text-shadow: 0 4px 12px rgba(0,0,0,0.3); line-height: 1.1;">
+                    There are objects you wear.<br>And there are objects you experience.</h2>
+                <p class="editorial-sub mt-4" style="color: var(--gold-pale); letter-spacing: 0.05em;">A striking
+                    contrast of nature and vision.</p>
+                <p class="editorial-body mt-4"
+                    style="color: rgba(255, 255, 255, 0.85); max-width: 100%; text-shadow: 0 2px 8px rgba(0,0,0,0.5); margin: 0;">
+                    The natural, grounding warmth of handcrafted wood against the bold clarity of precision lenses
+                    creates a distinct, personal signature. Each frame carries not just form—but presence.</p>
+                <p class="editorial-sub italic mt-6" style="color: var(--white);">Seen. Felt. Lived.</p>
             </div>
         </section>
 
