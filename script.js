@@ -20,33 +20,140 @@ gsap.ticker.add(time => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 lenis.on("scroll", ScrollTrigger.update);
 
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+/* ═══════════════════════════════════════════════════════════
+   PREMIUM APPLE-STYLE VIDEO SCRUBBING
+   Uses requestAnimationFrame for ultimate smoothness
+═══════════════════════════════════════════════════════════ */
+const heroVideo = document.getElementById("hero-video");
+const heroText = document.getElementById("hero-text-container");
+const scrollIndicator = document.querySelector(".scroll-indicator");
+
+if (heroVideo) {
+    // We use a proxy object to tween the video progress 
+    // and sync it via requestAnimationFrame.
+    let videoProxy = { currentTime: 0 };
+    let isVideoLoaded = false;
+
+    // The rAF loop to ensure ultra-smooth frame updates independent of scroll events
+    function updateVideoFrame() {
+        if (isVideoLoaded && heroVideo.readyState >= 2) {
+            // Since GSAP scrub already interpolates the proxy value, we just apply it directly:
+            if (Math.abs(heroVideo.currentTime - videoProxy.currentTime) > 0.001) {
+                heroVideo.currentTime = videoProxy.currentTime;
+            }
+        }
+        requestAnimationFrame(updateVideoFrame);
+    }
+    requestAnimationFrame(updateVideoFrame);
+
+    heroVideo.addEventListener("loadedmetadata", () => {
+        isVideoLoaded = true;
+        const duration = heroVideo.duration || 1; // Fallback to 1s if duration is NaN
+
+        // Create the cinematic hero timeline
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".hero-sequence",
+                start: "top top",
+                end: "+=300%", // 300% of viewport height gives a nice scroll duration
+                scrub: 1.5,    // Smoothly scrub the video over 1.5 seconds catching up
+                pin: true,     // Pin the section while scrolling
+                anticipatePin: 1
+            }
+        });
+
+        // 1. Scrub the video by tweening the proxy object
+        tl.to(videoProxy, {
+            currentTime: duration,
+            ease: "none",
+            duration: 1
+        }, 0);
+
+        // 2. Subtle parallax/scale on the video itself
+        tl.fromTo(heroVideo,
+            { scale: 1 },
+            { scale: 1.15, ease: "none", duration: 1 },
+            0
+        );
+
+        // 3. Cinematic Text Fade & Scale (Animates OUT as user starts scrolling)
+        if (heroText) {
+            tl.to(heroText, {
+                y: -80,
+                scale: 0.95,
+                opacity: 0,
+                ease: "power2.inOut",
+                duration: 0.2 // Finishes in the first 20% of scroll
+            }, 0);
+        }
+
+        // 4. Fade out the scroll indicator quickly
+        if (scrollIndicator) {
+            tl.to(scrollIndicator, {
+                opacity: 0,
+                ease: "power2.inOut",
+                duration: 0.05
+            }, 0);
+        }
+    });
+
+    // Handle case where video is already loaded before event listener attaches
+    if (heroVideo.readyState >= 1) {
+        heroVideo.dispatchEvent(new Event("loadedmetadata"));
+    }
+
+    // Initial cinematic reveal of the text
+    if (heroText) {
+        gsap.fromTo(heroText,
+            { opacity: 0, y: 30, scale: 0.98 },
+            { opacity: 1, y: 0, scale: 1, duration: 2, ease: "power3.out", delay: 0.2 }
+        );
+    }
+    if (scrollIndicator) {
+        gsap.fromTo(scrollIndicator,
+            { opacity: 0 },
+            { opacity: 1, duration: 1.5, ease: "power2.inOut", delay: 1.5 }
+        );
+    }
+}
 /* ─────────────────────────────────────────────────────────
    2. CUSTOM CURSOR
 ───────────────────────────────────────────────────────── */
-if (window.innerWidth > 900) {
-    const dot  = document.getElementById("cursor");
-    const ring = document.getElementById("cursor-follower");
-    let mx = -200, my = -200;
+const cursor = document.getElementById("cursor");
+const cursorFollower = document.getElementById("cursor-follower");
 
-    document.addEventListener("mousemove", e => {
-        mx = e.clientX; my = e.clientY;
-        gsap.set(dot, { x: mx, y: my });
+if (cursor && cursorFollower) {
+    gsap.set(cursor, { xPercent: -50, yPercent: -50 });
+    gsap.set(cursorFollower, { xPercent: -50, yPercent: -50 });
+
+    let xSetterCursor = gsap.quickSetter(cursor, "x", "px");
+    let ySetterCursor = gsap.quickSetter(cursor, "y", "px");
+    
+    let xToFollower = gsap.quickTo(cursorFollower, "x", {duration: 0.6, ease: "power3"});
+    let yToFollower = gsap.quickTo(cursorFollower, "y", {duration: 0.6, ease: "power3"});
+
+    window.addEventListener("mousemove", (e) => {
+        xSetterCursor(e.clientX);
+        ySetterCursor(e.clientY);
+        
+        xToFollower(e.clientX);
+        yToFollower(e.clientY);
     });
-
-    // Ring follows with lag
-    (function followRing() {
-        gsap.to(ring, { x: mx, y: my, duration: 0.55, ease: "power3.out" });
-        requestAnimationFrame(followRing);
-    })();
-
-    document.querySelectorAll("a, button, [class*='btn']").forEach(el => {
+    
+    // Add hover effect for interactive elements
+    const interactives = document.querySelectorAll("a, button, input, select, textarea");
+    interactives.forEach(el => {
         el.addEventListener("mouseenter", () => {
-            gsap.to(dot,  { scale: 0.2, duration: 0.3 });
-            gsap.to(ring, { scale: 2.5, opacity: 0.35, duration: 0.4 });
+            gsap.to(cursor, { scale: 1.5, duration: 0.3 });
+            gsap.to(cursorFollower, { scale: 1.5, borderColor: "transparent", backgroundColor: "rgba(184, 146, 74, 0.1)", duration: 0.3 });
         });
         el.addEventListener("mouseleave", () => {
-            gsap.to(dot,  { scale: 1, duration: 0.3 });
-            gsap.to(ring, { scale: 1, opacity: 1,    duration: 0.4 });
+            gsap.to(cursor, { scale: 1, duration: 0.3 });
+            gsap.to(cursorFollower, { scale: 1, borderColor: "var(--gold)", backgroundColor: "transparent", duration: 0.3 });
         });
     });
 }
@@ -55,111 +162,13 @@ if (window.innerWidth > 900) {
    3. NAVBAR — glass effect on scroll
 ───────────────────────────────────────────────────────── */
 ScrollTrigger.create({
-    start: 80,
-    onEnter:      () => document.getElementById("navbar").classList.add("scrolled"),
-    onLeaveBack:  () => document.getElementById("navbar").classList.remove("scrolled"),
+    trigger: ".main-content",
+    start: "top 80px", // Trigger when main content gets close to the top
+    onEnter: () => document.getElementById("navbar").classList.add("scrolled"),
+    onLeaveBack: () => document.getElementById("navbar").classList.remove("scrolled"),
 });
 
-/* ═══════════════════════════════════════════════════════════
-   4. CINEMATIC HERO — Apple-Style Scroll Sequence
-   
-   Strategy:
-   • hero-sequence is 400vh tall so there's a long scroll runway
-   • hero-sticky is position:sticky so the viewport is "pinned"
-   • We use THREE separate ScrollTrigger scrub animations,
-     one per phase, each targeting a portion of the runway
-   • A load-time entrance animation plays once on page load
-═══════════════════════════════════════════════════════════ */
-(function heroScroll() {
-    const wrapper = document.getElementById("hero-3d-wrapper");
-    const img     = document.getElementById("hero-eyewear-img");
-    const overlay = document.getElementById("lighting-overlay");
-    const shadow  = document.getElementById("hero-shadow");
-    const t1      = document.getElementById("hero-text-1");
-    const t2      = document.getElementById("hero-text-2");
-    const t3      = document.getElementById("hero-text-3");
-    const hint    = document.querySelector(".scroll-hint-hero");
 
-    if (!wrapper) return;
-
-    /* ── Initial hidden state ── */
-    gsap.set(wrapper, { opacity: 0, scale: 1.6, rotateY: -30, rotateX: 15, rotateZ: 4 });
-    gsap.set(overlay, { opacity: 0 });
-    gsap.set(shadow,  { opacity: 0, scaleX: 0.5 });
-    gsap.set([t1, t2, t3], { opacity: 0, y: 40 });
-
-    /* ── ON LOAD: Entrance animation (plays immediately, not scroll-driven) ── */
-    const entrance = gsap.timeline({ delay: 0.3 });
-    entrance
-        .to(wrapper, {
-            opacity: 1, scale: 1, rotateY: -8, rotateX: 4, rotateZ: 1,
-            duration: 2.2, ease: "power3.out"
-        })
-        .to(shadow, { opacity: 0.35, scaleX: 1, duration: 1.8, ease: "power2.out" }, 0.4)
-        .to(overlay, { opacity: 0.25, duration: 2, ease: "power2.out" }, 0.6)
-        .to(t1, { opacity: 1, y: 0, duration: 1.2, ease: "power3.out" }, 0.9)
-        .to(hint, { opacity: 1, duration: 1, ease: "power2.out" }, 1.2);
-
-    /* ── PHASE 1: scroll 0% → 33% of runway
-       Glasses rotate toward front-facing, text-1 fades out, text-2 arrives ── */
-    const phase1 = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".hero-sequence",
-            start: "top top",
-            end: "33% top",          // first third of 400vh = ~132vh of scroll
-            scrub: 1.8,
-        }
-    });
-    phase1
-        .to(wrapper, { rotateY: 8, rotateX: -2, rotateZ: 0, scale: 1.12, ease: "none" }, 0)
-        .to(overlay, {
-            background: "radial-gradient(ellipse 55% 70% at 65% 35%, rgba(255,255,255,.32) 0%, transparent 70%)",
-            opacity: 0.4, ease: "none"
-        }, 0)
-        .to(shadow,  { scaleX: 1.15, opacity: 0.28, ease: "none" }, 0)
-        .to(t1, { opacity: 0, y: -30, duration: 0.3, ease: "none" }, 0)
-        .to(hint, { opacity: 0, ease: "none" }, 0)
-        .to(t2, { opacity: 1, y: 0, ease: "none" }, 0.5);
-
-    /* ── PHASE 2: scroll 33% → 66% of runway
-       Glasses tilt to side view, text-2 out, text-3 in, light sweeps ── */
-    const phase2 = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".hero-sequence",
-            start: "33% top",
-            end: "66% top",
-            scrub: 1.8,
-        }
-    });
-    phase2
-        .to(wrapper, { rotateY: 22, rotateX: 3, rotateZ: -2, scale: 1.25, ease: "none" }, 0)
-        .to(overlay, {
-            background: "radial-gradient(ellipse 45% 55% at 80% 55%, rgba(255,245,220,.38) 0%, transparent 70%)",
-            opacity: 0.5, ease: "none"
-        }, 0)
-        .to(shadow, { scaleX: 0.75, opacity: 0.2, x: "12%", ease: "none" }, 0)
-        .to(t2, { opacity: 0, y: -30, ease: "none" }, 0)
-        .to(t3, { opacity: 1, y: 0, ease: "none" }, 0.4);
-
-    /* ── PHASE 3: scroll 66% → 100% of runway
-       Glasses settle to calm front-facing final pose,
-       text-3 fades, hero fades to reveal next section ── */
-    const phase3 = gsap.timeline({
-        scrollTrigger: {
-            trigger: ".hero-sequence",
-            start: "66% top",
-            end: "bottom top",
-            scrub: 1.8,
-        }
-    });
-    phase3
-        .to(wrapper, { rotateY: 0, rotateX: 0, rotateZ: 0, scale: 0.9, ease: "none" }, 0)
-        .to(overlay, { opacity: 0, ease: "none" }, 0)
-        .to(shadow,  { opacity: 0.12, scaleX: 1, x: "0%", ease: "none" }, 0)
-        .to(t3, { opacity: 0, y: -30, ease: "none" }, 0)
-        .to(".hero-sticky", { opacity: 0.5, ease: "none" }, 0.6);
-
-})();
 
 /* ─────────────────────────────────────────────────────────
    5. CONTENT SECTIONS — Scroll Reveal

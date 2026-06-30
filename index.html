@@ -38,66 +38,93 @@
             <a href="#experience">The Experience</a>
             <a href="#bespoke">Custom Creation</a>
         </div>
-        <a href="#bespoke" class="btn-primary">Bespoke</a>
+        <a href="#ala-profile" class="btn-primary">Bespoke</a>
     </nav>
 
     <!-- 3D Cinematic Hero Sequence -->
     <section class="hero-sequence" id="hero-sequence">
         <div class="hero-sticky">
+            <!-- Video Background -->
+            <video class="hero-video" id="hero-video" muted playsinline preload="auto">
+                <source src="scrolling.mp4" type="video/mp4">
+            </video>
 
-            <!-- Background text elements -->
-            <div class="hero-text-layer">
-                <!-- Frame 1 -->
-                <div class="hero-text-block" id="hero-text-1">
-                    <h1 class="hero-title">ALA</h1>
-                    <p class="hero-subtitle italic">Be the wave</p>
-                </div>
+            <!-- Subtle Dark Overlay -->
+            <div class="hero-overlay"></div>
 
-                <!-- Frame 2 -->
-                <div class="hero-text-block" id="hero-text-2">
-                    <p class="hero-desc">Eyewear, redefined.<br>From a single piece of nature.</p>
-                </div>
-
-                <!-- Frame 3 -->
-                <div class="hero-text-block" id="hero-text-3">
-                    <p class="hero-desc">A wave you don't follow.<br>A wave you become.</p>
-                </div>
+            <!-- Cinematic Text Overlay -->
+            <div class="hero-text-container" id="hero-text-container">
+                <h1 class="hero-title-main">ALA</h1>
+                <p class="hero-subtitle-main">Be the wave</p>
             </div>
 
-            <!-- 3D Eyewear Container -->
-            <div class="hero-3d-container">
-                <div class="hero-3d-wrapper" id="hero-3d-wrapper">
-                    <!-- Eyewear image that will be rotated and scaled -->
-                    <img src="5.PNG" alt="ALA Wooden Eyewear" class="hero-eyewear-img" id="hero-eyewear-img">
-
-                    <!-- Dynamic lighting overlay -->
-                    <div class="lighting-overlay" id="lighting-overlay"></div>
-
-                    <!-- Dynamic shadow -->
-                    <div class="hero-shadow" id="hero-shadow"></div>
-                </div>
+            <div class="scroll-indicator">
+                <p>Scroll to Explore</p>
+                <div class="line"></div>
             </div>
-
-            <div class="scroll-hint-hero">
-                <span>Scroll to experience</span>
-                <div class="scroll-line-hero"></div>
-            </div>
-
         </div>
     </section>
-
     <!-- Content Sections -->
     <main class="main-content">
+        <section id="ala-profile" class="section-pad bg-warm">
+            <div class="container">
 
+                <div class="text-center max-w-800" style="margin-bottom:2.5rem;">
+                    <p class="eyebrow">Custom Creation</p>
+                    <h1 class="section-title">Your ALA Profile</h1>
+                    <p class="editorial-sub italic">
+                        Every piece begins with understanding the individual.
+                    </p>
+                </div>
+
+                <div class="form-wrapper">
+                    <!-- Floating Stickers -->
+                    <img src="20_cutout.png" class="sticker sticker-left reveal-up" alt="ALA Glasses">
+                    <img src="19_cutout.png" class="sticker sticker-right reveal-up" alt="ALA Glasses">
+
+                    <div class="form-container reveal-up">
+
+                        <form class="custom-form">
+
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                    required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                            </div>
+
+                            <button type="submit" class="btn-primary btn-block mt-2">
+                                Submit Request
+                            </button>
+
+                        </form>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
         <!-- Intro -->
         <section class="intro section-pad">
-            <div class="container text-center max-w-800">
-                <h2 class="editorial-text reveal-up">There are objects you wear.<br>And there are objects you
-                    experience.</h2>
-                <p class="editorial-sub reveal-up mt-2">ALA is both.</p>
-                <p class="editorial-body reveal-up mt-4">Crafted from a single, continuous piece of natural wood, each
-                    frame carries not just form— but presence.</p>
-                <p class="editorial-sub italic reveal-up mt-2">Seen. Felt. Lived.</p>
+            <div class="container grid-2-col align-center">
+                <div class="reveal-mask">
+                    <img src="21.jpeg" alt="Model wearing ALA wooden frames with vivid lenses" class="parallax-img" style="border-radius: 4px; min-height: 60vh; object-position: center;">
+                </div>
+                <div class="reveal-up pl-2">
+                    <h2 class="editorial-text">There are objects you wear.<br>And there are objects you experience.</h2>
+                    <p class="editorial-sub mt-4">A striking contrast of nature and vision.</p>
+                    <p class="editorial-body mt-4" style="margin: 0; max-width: 100%;">The natural, grounding warmth of handcrafted wood against the bold clarity of precision lenses creates a distinct, personal signature. Each frame carries not just form—but presence.</p>
+                    <p class="editorial-sub italic mt-4">Seen. Felt. Lived.</p>
+                </div>
             </div>
         </section>
 
@@ -296,7 +323,9 @@
                     <p class="editorial-sub italic mt-2">Each piece is accompanied by a lifetime assurance— a commitment
                         to its continuity.</p>
 
-                    <a href="#" class="btn-secondary mt-6">Begin Your Process</a>
+                    <a href="#ala-profile" class="btn-secondary mt-6">
+                        Begin Your Process
+                    </a>
                 </div>
             </div>
         </section>
