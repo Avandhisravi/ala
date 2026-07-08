@@ -9,14 +9,193 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Single premium font family: Cormorant Garamond -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Scoped styles for profile page to enforce dual font families */
+        body {
+            font-family: 'Inter', system-ui, sans-serif;
+            background-color: var(--bg-warm);
+        }
+
+        .editorial-split {
+            display: grid;
+            grid-template-columns: 1fr;
+            min-height: 100vh;
+        }
+
+        @media (min-width: 900px) {
+            .editorial-split {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .image-col {
+            position: relative;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-warm);
+        }
+
+        @media (min-width: 900px) {
+            .image-col {
+                padding: 4rem;
+                position: sticky;
+                top: 0;
+                height: 100vh;
+            }
+        }
+
+        .image-wrapper {
+            width: 100%;
+            height: 100%;
+            max-height: 85vh;
+            overflow: hidden;
+            /* Organic shape: Pebble */
+            border-radius: 35% 65% 40% 60% / 50% 60% 40% 50%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+            transform: translateY(40px);
+            opacity: 0;
+        }
+        
+        @media (min-width: 900px) {
+            .image-wrapper {
+                border-radius: 35% 65% 40% 60% / 50% 60% 40% 50%;
+            }
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 20%;
+            transform: scale(1.05);
+        }
+
+        .form-col {
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media (min-width: 900px) {
+            .form-col {
+                padding: 8rem 6rem;
+            }
+        }
+
+        .form-container-inner {
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .profile-title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+            font-weight: 300;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            line-height: 1.15;
+            margin-bottom: 2.5rem;
+            color: var(--text-1);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .profile-subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--text-2);
+            margin-bottom: 4rem;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        /* Minimal Form Styling */
+        .editorial-form .form-group {
+            margin-bottom: 2.5rem;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .editorial-form label {
+            display: block;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-3);
+            margin-bottom: 0.5rem;
+        }
+
+        .editorial-form input,
+        .editorial-form textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 0.8rem 0;
+            font-family: 'Inter', system-ui, sans-serif;
+            font-size: 1.1rem;
+            color: var(--text-1);
+            transition: border-color 0.4s ease;
+            resize: none;
+        }
+        
+        .editorial-form input:focus,
+        .editorial-form textarea:focus {
+            outline: none;
+            border-bottom: 1px solid var(--wood);
+        }
+
+        .editorial-form input::placeholder,
+        .editorial-form textarea::placeholder {
+            color: rgba(0, 0, 0, 0.15);
+            font-style: italic;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .btn-editorial {
+            display: inline-block;
+            background: transparent;
+            border: 1px solid var(--wood);
+            color: var(--wood);
+            font-family: 'Inter', system-ui, sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 1.2rem 3rem;
+            border-radius: 0; /* Sharp, museum-like */
+            cursor: pointer;
+            transition: all 0.5s var(--ease-out);
+            margin-top: 1rem;
+            width: 100%;
+            text-align: center;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .btn-editorial:hover {
+            background: var(--wood);
+            color: var(--white);
+            letter-spacing: 0.25em;
+        }
+
+        .nav-logo a {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
 </head>
 
 <body>
-
-    <!-- No Custom Cursor -->
     <!-- Navigation -->
     <nav class="navbar scrolled" id="navbar">
         <div class="nav-logo"><a href="index.html">ALA</a></div>
@@ -26,81 +205,78 @@
             <a href="index.html#experience">The Experience</a>
             <a href="index.html#bespoke">Custom Creation</a>
         </div>
-        <a href="profile.html" class="btn-primary">Bespoke</a>
+        <a href="profile.html" class="btn-primary" style="font-family: 'Cormorant Garamond', serif;">Bespoke</a>
     </nav>
 
-    <main class="main-content bg-warm pt-8 pb-4" style="min-height: 100vh; display: flex; align-items: center;">
-        <section class="section-pad w-100">
-            <div class="container max-w-600 form-container reveal-up" style="transform: translateY(30px); opacity: 0;">
-                <p class="eyebrow text-center">Bespoke</p>
-                <h1 class="section-title text-center mb-2" style="font-size: clamp(2.5rem, 5vw, 4rem);">Begin Your Process</h1>
-                <p class="section-body text-center mx-auto mb-4">Please provide your details to initiate the creation of your custom ALA frame.</p>
+    <main class="editorial-split">
+        <!-- Image Column -->
+        <div class="image-col">
+            <div class="image-wrapper" id="profile-image">
+                <img src="22.jpeg" alt="ALA Bespoke Process" id="profile-img-inner">
+            </div>
+        </div>
 
-                <form class="custom-form mt-4">
-                    <div class="form-group">
+        <!-- Form Column -->
+        <div class="form-col">
+            <div class="form-container-inner">
+                <p class="eyebrow profile-eyebrow" style="font-family: 'Inter', system-ui, sans-serif; letter-spacing: 0.2em; transform: translateY(20px); opacity: 0;">Bespoke</p>
+                <h1 class="profile-title">Begin Your Process</h1>
+                <p class="profile-subtitle" style="font-family: 'Inter', system-ui, sans-serif; font-size: 1.1rem; line-height: 1.8; font-style: normal; color: var(--text-2);">ALA creates luxury eyewear frames from rare natural materials such as sandalwood, teak, and rosewood, refined with subtle gold inlay. Alive in texture. Deep in character. Distinct in scent. Its grain carries memory. Its fragrance carries identity. With every wear, it reveals itself—slowly, continuously.</p>
+
+                <form class="editorial-form">
+                    <div class="form-group stagger-item">
                         <label for="fullName">Full Name</label>
                         <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group stagger-item">
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" placeholder="Enter your email" required>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group stagger-item">
                         <label for="phone">Phone Number</label>
                         <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group stagger-item">
                         <label for="address">Shipping Address</label>
-                        <textarea id="address" name="address" rows="2" placeholder="Enter your full shipping address" required></textarea>
+                        <textarea id="address" name="address" rows="1" placeholder="Enter your full shipping address" required></textarea>
                     </div>
 
-                    <div class="form-group">
+                    <div class="form-group stagger-item">
                         <label for="preferences">Material & Detail Preferences</label>
-                        <textarea id="preferences" name="preferences" rows="2" placeholder="e.g., Sandalwood with Gold Inlay Initials"></textarea>
+                        <textarea id="preferences" name="preferences" rows="1" placeholder="e.g., Sandalwood with Gold Inlay"></textarea>
                     </div>
 
-                    <button type="submit" class="btn-primary btn-block mt-2">Submit Request</button>
+                    <button type="submit" class="btn-editorial stagger-item">Submit Request</button>
                 </form>
             </div>
-        </section>
+        </div>
     </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script>
-        // Custom Cursor
-        const cursor = document.getElementById("cursor");
-        const cursorFollower = document.getElementById("cursor-follower");
-        if (cursor && cursorFollower && window.innerWidth > 900) {
-            document.addEventListener("mousemove", (e) => {
-                cursor.style.left = e.clientX + "px";
-                cursor.style.top = e.clientY + "px";
-                cursorFollower.style.left = e.clientX + "px";
-                cursorFollower.style.top = e.clientY + "px";
-            });
-            document.querySelectorAll("a, button, input, textarea").forEach((el) => {
-                el.addEventListener("mouseenter", () => {
-                    cursorFollower.style.width = "60px";
-                    cursorFollower.style.height = "60px";
-                    cursorFollower.style.background = "rgba(184, 146, 74, 0.1)";
-                });
-                el.addEventListener("mouseleave", () => {
-                    cursorFollower.style.width = "36px";
-                    cursorFollower.style.height = "36px";
-                    cursorFollower.style.background = "transparent";
-                });
-            });
-        }
-        
-        // Form Animation Reveal
-        gsap.to(".form-container", {
-            y: 0,
-            opacity: 1,
-            duration: 1.2,
-            ease: "power3.out",
-            delay: 0.1
+        // Smooth minimal scroll reveal
+        document.addEventListener("DOMContentLoaded", () => {
+            const tl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1.4 } });
+            
+            // Reveal image
+            tl.to("#profile-image", { y: 0, opacity: 1, duration: 1.6 }, 0.2)
+              .to("#profile-img-inner", { scale: 1, duration: 2 }, 0.2);
+
+            // Reveal text
+            tl.to(".profile-eyebrow", { y: 0, opacity: 1 }, 0.4)
+              .to(".profile-title", { y: 0, opacity: 1 }, 0.5)
+              .to(".profile-subtitle", { y: 0, opacity: 1 }, 0.6);
+
+            // Stagger form items
+            tl.to(".stagger-item", {
+                y: 0,
+                opacity: 1,
+                stagger: 0.1,
+                duration: 1.2
+            }, 0.8);
         });
     </script>
 </body>

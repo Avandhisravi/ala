@@ -20,7 +20,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 
 <body>
@@ -53,67 +53,46 @@
             <div class="hero-overlay"></div>
 
             <!-- Cinematic Text Overlay -->
-            <div class="hero-text-container" id="hero-text-container">
-                <h1 class="hero-title-main">ALA</h1>
-                <p class="hero-subtitle-main">Be the wave</p>
-            </div>
 
-            <div class="scroll-indicator">
-                <p>Scroll to Explore</p>
-                <div class="line"></div>
-            </div>
         </div>
     </section>
     <!-- Content Sections -->
     <main class="main-content">
-        <section id="ala-profile" class="section-pad bg-warm">
-            <div class="container">
 
-                <div class="text-center max-w-800" style="margin-bottom:2.5rem;">
-                    <p class="eyebrow">Custom Creation</p>
-                    <h1 class="section-title">Your ALA Profile</h1>
-                    <p class="editorial-sub italic">
-                        Every piece begins with understanding the individual.
+        <!-- Intro -->
+
+
+        <!-- The Product -->
+        <section id="product" class="product product-luxury-section bg-warm">
+            <div class="container product-layout">
+                <div class="content-left luxury-stagger-group">
+                    <h2 class="section-title luxury-stagger-item">For Those Who <br>Move the World Around Them</h2>
+                    <p class="editorial-sub mt-4" style="editorial-sub mt-4"
+                        style="color: var(--gold-pale); letter-spacing: 0.05em;">Ala means wave.
+                        A wave moves without asking for attention.
+                        Yet everything around it changes.
+                        Fashion moves like a wave.
+                        Ideas move like a wave.
+                        So do people who leave a mark on the world around them.
+                        ALA is created for those people.
+                        Not simply as eyewear,
+                        but as an extension of presence, identity, and power.
+                        Objects shaped to feel personal the moment they are worn.
                     </p>
+                    <div class="gold-accent-line"></div>
+
                 </div>
-
-                <div class="form-wrapper">
-                    <!-- Floating Stickers -->
-                    <img src="20_cutout.png" class="sticker sticker-left reveal-up" alt="ALA Glasses">
-                    <img src="19_cutout.png" class="sticker sticker-right reveal-up" alt="ALA Glasses">
-
-                    <div class="form-container reveal-up">
-
-                        <form class="custom-form">
-
-                            <div class="form-group">
-                                <label for="fullName">Full Name</label>
-                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
-                                    required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email">Email Address</label>
-                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
-                            </div>
-
-                            <button type="submit" class="btn-primary btn-block mt-2">
-                                Submit Request
-                            </button>
-
-                        </form>
-
+                <div class="content-right product-image-wrapper">
+                    <div class="product-image-container">
+                        <img src="2.PNG" alt="Wooden Eyewear Texture"
+                            class="product-luxury-img parallax-img-slow image-pebble-3">
+                        <div class="lens-reflection"></div>
                     </div>
                 </div>
-
             </div>
         </section>
-        <!-- Intro -->
+
+
         <section class="intro"
             style="position: relative; width: 100vw; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: flex-end;">
             <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 0;">
@@ -130,76 +109,66 @@
                 style="position: relative; z-index: 2; margin: 0 8% 0 auto; max-width: 550px; text-align: left;">
                 <h2 class="editorial-text"
                     style="color: var(--white); font-size: clamp(2.2rem, 4vw, 3.5rem); text-shadow: 0 4px 12px rgba(0,0,0,0.3); line-height: 1.1;">
-                    There are objects you wear.<br>And there are objects you experience.</h2>
-                <p class="editorial-sub mt-4" style="color: var(--gold-pale); letter-spacing: 0.05em;">A striking
-                    contrast of nature and vision.</p>
-                <p class="editorial-body mt-4"
-                    style="color: rgba(255, 255, 255, 0.85); max-width: 100%; text-shadow: 0 2px 8px rgba(0,0,0,0.5); margin: 0;">
-                    The natural, grounding warmth of handcrafted wood against the bold clarity of precision lenses
-                    creates a distinct, personal signature. Each frame carries not just form—but presence.</p>
-                <p class="editorial-sub italic mt-6" style="color: var(--white);">Seen. Felt. Lived.</p>
+                    One Piece.<br>One Flow. <br>One Identity.</h2>
+                <p class="editorial-sub mt-4" style="color: var(--gold-pale); letter-spacing: 0.05em;">Each ALA frame
+                    begins as a single piece of natural wood.
+                    From the front frame to the temple arms, the material remains uninterrupted — preserving the natural
+                    grain exactly as it grew.
+                    No artificial joins.
+                    No layered construction.
+                    Just continuity refined into form.
+                    The result feels unmistakably different.
+                </p>
+                <p class="editorial-sub mt-4" style="color: var(--gold-pale); letter-spacing: 0.05em;">Warmer.
+                    More alive.
+                    More personal.
+                </p>
             </div>
         </section>
-
-        <!-- The Product -->
-        <section id="product" class="product section-pad bg-warm">
-            <div class="container grid-2-col align-center">
-                <div class="content-left reveal-up">
-                    <p class="eyebrow">The Product</p>
-                    <h2 class="section-title">Monolithic Wooden Eyewear</h2>
-                    <p class="section-body">ALA creates luxury eyewear frames from rare natural materials such as
-                        sandalwood, teak, and rosewood, refined with subtle gold inlay.</p>
-
-                    <div class="mt-4">
-                        <p class="editorial-sub italic">Alive in texture. Deep in character. Distinct in scent.</p>
-                        <p class="section-body mt-2">Its grain carries memory. Its fragrance carries identity. With
-                            every wear, it reveals itself—slowly, continuously.</p>
-                    </div>
-                </div>
-                <div class="content-right reveal-mask">
-                    <img src="2.PNG" alt="Wooden Eyewear Texture" class="parallax-img">
-                </div>
-            </div>
-        </section>
-
         <!-- Gold -->
-        <section class="gold section-pad text-center">
-            <div class="container max-w-800">
-                <h2 class="section-title reveal-up gold-text">Gold</h2>
-                <p class="editorial-sub italic reveal-up mt-2">Drawn from the earth's core. Enduring. Elemental.</p>
-                <p class="section-body reveal-up mt-4 mx-auto">Set into the wood with restraint, it does not decorate—
-                    it defines.</p>
-            </div>
-        </section>
 
         <!-- Craftsmanship -->
-        <section id="craft" class="craft section-pad bg-dark text-light">
+        <section id="craft" class="craft section-pad bg-sand">
             <div class="container grid-2-col align-center">
                 <div class="content-left order-2 reveal-mask">
-                    <img src="3.PNG" alt="Craftsmanship detail" class="parallax-img">
+                    <img src="3.PNG" alt="Craftsmanship detail" class="parallax-img image-pebble-1">
                 </div>
-                <div class="content-right order-1 reveal-up">
-                    <p class="eyebrow light">Craftsmanship</p>
-                    <h2 class="section-title light">Wood resists.</h2>
-                    <p class="editorial-sub italic light mt-2">It bends only when understood.</p>
-                    <p class="section-body light mt-4">Each frame is shaped through a process of controlled forming,
-                        allowing the material to take form without losing its continuity.</p>
-                    <p class="section-body light">The temple arms are derived from the same piece, sectioned and
-                        returned to movement— without losing origin.</p>
-                    <p class="editorial-sub italic light mt-4">The grain flows. The structure remains whole.</p>
 
-                    <div class="mt-4 border-top-light pt-4">
-                        <p class="section-body light">Each frame is formed from a single, continuous piece of wood,
-                            where the front structure and temple arms originate from the same source.</p>
-                        <ul class="clean-list mt-2">
-                            <li>No assembly.</li>
-                            <li>No interruption.</li>
-                            <li>No compromise.</li>
-                        </ul>
-                        <p class="editorial-sub italic light mt-4">The grain flows uninterrupted— and so does the
-                            experience.</p>
-                    </div>
+                <div class="content-left luxury-stagger-group">
+                    <h2 class="section-title luxury-stagger-item">Crafted To Be Remembered</h2>
+                    <p class="editorial-sub mt-4" style="editorial-sub mt-4"
+                        style="color: var(--gold-pale); letter-spacing: 0.05em;">Wood resists.
+                        Shaping it takes years of patience, precision, and understanding.
+                        Every ALA frame is formed slowly by hand through a process mastered over a lifetime by the
+                        artist behind it.
+                        Nothing rushed.
+                        Nothing unnecessary.
+                        Only craftsmanship at its purest.
+                        What emerges carries more than rarity.
+                        It carries the weight of years — created for one moment:
+                        The moment the wearer puts it on and becomes unforgettable.
+                    </p>
+                    <div class="gold-accent-line"></div>
+
                 </div>
+            </div>
+            </div>
+        </section>
+
+
+        <section class="optics section-pad bg-dark">
+            <div class="container text-center max-w-800 reveal-up">
+                <h2 class="section-title" style="color: var(--gold-pale);">A New Wave of Eyewear</h2>
+                <p class="editorial-sub italic mt-2" style="color: var(--gold-pale);">ALA introduces a different
+                    language for eyewear.
+                    Natural wood brings warmth, texture, depth, and individuality impossible to replicate artificially.
+                    The frame evolves with time.
+                    The grain responds uniquely to light.
+                    The object becomes more personal with every wear.
+                    Not trend-driven.
+                    Enduring by nature.
+                </p>
+
             </div>
         </section>
 
@@ -207,160 +176,240 @@
         <section id="experience" class="experience section-pad bg-warm">
             <div class="container">
                 <div class="text-center max-w-800 mx-auto reveal-up">
-                    <p class="eyebrow">The Experience</p>
-                    <h2 class="section-title">More than what is seen.</h2>
+                    <p class="eyebrow">The Woods</p>
+                    <h2 class="section-title">Depth, Carved into Form</h2>
                 </div>
 
-                <div class="grid-2-col align-start mt-6">
-                    <div class="reveal-up">
-                        <h3 class="subsection-title">Sandalwood is not just material.<br><span class="italic">It is
-                                presence.</span></h3>
-                        <p class="section-body mt-4">As it rests against you, it releases a natural, subtle fragrance—
-                            warm, grounding, unmistakable.</p>
-                        <p class="section-body">Not applied. Not added.</p>
-                        <p class="section-body italic">It emerges from within the wood itself.</p>
-                        <p class="section-body mt-4">Over time, it becomes familiar. Personal.</p>
-                        <p class="editorial-sub mt-2">A quiet signature that moves with you— perceived only by those
-                            close enough.</p>
+                <div class="staggered-layout reveal-up">
+
+                    <div class="staggered-row">
+                        <div class="staggered-img-wrapper">
+                            <img src="rose.png" alt="Rosewood Texture" class="staggered-img parallax-img">
+                        </div>
+                        <div class="staggered-text">
+
+                            <h3>Rosewood</h3>
+                            <p class="editorial-sub mt-4">Rich. Layered. Refined. Rosewood carries darker tonal depth
+                                and intricate grain that
+                                reveal themselves gradually over time. Quiet confidence in its purest form.</p>
+                            <div class="staggered-divider"></div>
+                        </div>
                     </div>
 
-                    <div class="reveal-up material-callout">
-                        <p class="eyebrow">Materials</p>
 
-                        <div class="material-item">
-                            <h3 class="subsection-title">Sandalwood</h3>
-                            <p class="section-body italic">A material that matures over decades. Warm, fragrant, deeply
-                                personal.</p>
+                    <div class="staggered-row reverse">
+                        <div class="staggered-img-wrapper">
+                            <img src="forest teek.jpg" alt="Teak Texture" class="staggered-img parallax-img">
                         </div>
-
-                        <div class="material-item">
-                            <h3 class="subsection-title">Teak</h3>
-                            <p class="section-body italic">Resilient and golden. A wood that ages with grace and
-                                strength.</p>
+                        <div class="staggered-text">
+                            <h3>Forest Teak</h3>
+                            <p class="editorial-sub mt-4">Structured. Powerful. Precise.
+                                Forest teak brings density, strength, and architectural clarity to the collection.
+                                Presence without excess.
+                            </p>
+                            <div class="staggered-divider"></div>
                         </div>
+                    </div>
 
-                        <div class="material-item">
-                            <h3 class="subsection-title">Rosewood</h3>
-                            <p class="section-body italic">Rich, dark grain with an almost sculptural depth of tone.</p>
+                    <div class="staggered-row">
+                        <div class="staggered-img-wrapper">
+                            <img src="sandalwood.jpg" alt="Ebony Texture" class="staggered-img parallax-img">
                         </div>
-
-                        <div class="material-item">
-                            <h3 class="subsection-title">Ebony</h3>
-                            <p class="section-body italic">Dense, lustrous black. The rarest of the collection.</p>
+                        <div class="staggered-text">
+                            <h3>Sandalwood</h3>
+                            <p class="editorial-sub mt-4">Warm in tone.
+                                Soft in movement.
+                                Unmistakably alive.
+                                Its flowing grain creates natural rhythm throughout the frame, while its subtle
+                                fragrance emerges gently through wear.
+                                Not applied.
+                                Part of the material itself.
+                                A quiet signature carried by the wearer alone.
+                            </p>
+                            <div class="staggered-divider"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
 
         <!-- Optics -->
-        <section class="optics section-pad">
-            <div class="container text-center max-w-800 reveal-up">
-                <h2 class="section-title">Optics, Elevated</h2>
-                <p class="editorial-sub italic mt-2">The experience extends beyond the frame.</p>
-                <p class="section-body mt-4">ALA offers a curated selection of high-performance lenses, chosen for
-                    clarity, precision, and longevity.</p>
-
-                <div class="options-list mt-4 text-left mx-auto max-w-600">
-                    <p class="fw-bold mb-2">Options include:</p>
-                    <ul class="detailed-list">
-                        <li>Advanced optical lenses for everyday wear</li>
-                        <li>High-definition lenses with enhanced visual clarity</li>
-                        <li>Sun lenses with refined tinting and protection</li>
-                        <li>Custom prescriptions integrated seamlessly</li>
-                    </ul>
-                </div>
-
-                <p class="section-body italic mt-6">Each lens is selected and fitted to match both the frame and the
-                    wearer— ensuring a complete alignment of vision and form.</p>
-            </div>
-        </section>
 
         <!-- Custom Creation -->
-        <section id="bespoke" class="bespoke section-pad bg-dark text-light">
+
+        <section id="craft" class="craft section-pad bg-sand">
             <div class="container grid-2-col align-center">
-                <div class="reveal-up">
-                    <p class="eyebrow light">Custom Creation</p>
-                    <h2 class="section-title light">Made for one.</h2>
-                    <p class="section-body light mt-4">Each ALA frame is custom-created to your exact dimensions—
-                        measured, balanced, and refined to align with your natural form.</p>
-                    <p class="section-body light italic">Proportion is not adjusted after creation. It is resolved from
-                        the beginning.</p>
-                    <p class="editorial-sub light mt-4">The result does not sit on you. It aligns with you.</p>
-                </div>
-                <div class="reveal-mask">
-                    <img src="1.PNG" alt="Custom Creation" class="parallax-img">
-                </div>
-            </div>
-
-            <div class="container mt-8 reveal-up">
-                <h3 class="subsection-title light text-center">A Personal Language of Detail</h3>
-                <p class="section-body light text-center mx-auto max-w-800 mt-2">Beyond form, each piece allows for
-                    individual expression— not as embellishment, but as identity.</p>
-
-                <div class="grid-3-col mt-6">
-                    <div class="detail-card">
-                        <h4 class="gold-text">Gold Inlay Motifs</h4>
-                        <p class="section-body light small mt-2">Intricate patterns, symbols, or cultural references—
-                            designed and inlaid in gold, chosen by the wearer.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4 class="gold-text">Initials & Signature Marks</h4>
-                        <p class="section-body light small mt-2">Personal engravings or gold-set initials, integrated
-                            seamlessly into the structure.</p>
-                    </div>
-                    <div class="detail-card">
-                        <h4 class="gold-text">Precious Stone Inlays</h4>
-                        <p class="section-body light small mt-2">Selected stones can be embedded within the frame— based
-                            on personal significance, astrological alignment, or individual preference.</p>
-                    </div>
+                <div class="content-left order-2 reveal-mask">
+                    <img src="6.jpeg" alt="Craftsmanship detail" class="parallax-img image-pebble-1">
                 </div>
 
-                <p class="editorial-sub light italic text-center mt-6">Each detail is placed with restraint, ensuring it
-                    becomes part of the form— never separate from it.</p>
-            </div>
-        </section>
-
-        <!-- Closing -->
-        <section class="closing section-pad text-center">
-            <div class="container max-w-800 reveal-up">
-                <h2 class="section-title">A Process, Not a Purchase</h2>
-                <p class="section-body mt-4">Every ALA frame is created through a guided process— where material,
-                    measurement, and meaning come together.</p>
-                <p class="editorial-sub italic mt-2">It is not chosen from a shelf. It is arrived at.</p>
-
-                <div class="mt-8 pt-8 border-top">
-                    <h2 class="section-title">Enduring Ownership</h2>
-                    <p class="section-body mt-4">What is made with this level of intention is meant to last beyond time.
+                <div class="content-left luxury-stagger-group">
+                    <h2 class="section-title luxury-stagger-item">Where Earth’s Finest Materials Meet</h2>
+                    <p class="editorial-sub mt-4" style="editorial-sub mt-4"
+                        style="color: var(--gold-pale); letter-spacing: 0.05em;">Gold is used with restraint.
+                        Integrated through refined inlay work, it becomes part of the frame itself — bringing contrast,
+                        precision, and permanence to the warmth of the wood.
+                        Every ALA mark is rendered in gold — a reflection of the value, rarity, and permanence carried
+                        within every creation. A symbol of the wave, shaped through one of earth’s rarest materials.
+                        Quietly expressive.
+                        Impossible to ignore.
                     </p>
-                    <p class="editorial-sub italic mt-2">Each piece is accompanied by a lifetime assurance— a commitment
-                        to its continuity.</p>
+                    <div class="gold-accent-line"></div>
 
-                    <a href="#ala-profile" class="btn-secondary mt-6">
-                        Begin Your Process
-                    </a>
                 </div>
+            </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="footer bg-dark text-light pt-8 pb-4">
-            <div class="container grid-2-col align-center pb-4 border-bottom-light">
-                <div>
-                    <div class="nav-logo text-light">ALA</div>
-                    <p class="section-body light small mt-2">Eyewear, redefined.<br>From a single piece of nature.</p>
-                </div>
-                <div class="text-right">
-                    <a href="#" class="btn-ghost">Contact Us</a>
+        <section class="product-luxury-section bg-warm" style="padding: 4rem 0;">
+            <div class="container text-center max-w-800 mx-auto luxury-stagger-group">
+                <h2 class="section-title luxury-stagger-item">Made for One Person Alone</h2>
+                <p class="editorial-sub mt-4" style="editorial-sub mt-4">Every ALA frame
+                    is created for one
+                    individual.
+                    Measured to personal dimensions.
+                    Balanced to natural proportions.
+                    Refined to align completely with its wearer.
+                    Optional gold inlays allow for initials, motifs, and deeply personal detailing integrated
+                    directly into the frame.
+                    No two pieces are ever alike.
+                    Because no two people are.
+
+                </p>
+                <div class="gold-accent-line" style="margin: 0 auto; margin-top: 2rem;"></div>
+            </div>
+        </section>
+
+        <section class="optics section-pad bg-dark">
+            <div class="container text-center max-w-800 reveal-up">
+                <h2 class="section-title" style="color: var(--gold-pale);">Vision, Refined</h2>
+                <p class="editorial-sub italic mt-2" style="color: var(--gold-pale);">Precision extends beyond the
+                    frame.
+                    ALA offers a curated range of premium optical and sun lenses selected for exceptional clarity and
+                    visual refinement.
+                    Because vision deserves the same level of craftsmanship as form.
+
+
+                </p>
+
+            </div>
+        </section>
+        <!-- Closing -->
+
+        <section id="product" class="product product-luxury-section bg-warm"
+            style="position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding: 4rem 0;">
+            <div class="container"
+                style="width: 55%; margin-left: 8%; margin-right: auto; position: relative; z-index: 2;">
+                <div class="luxury-stagger-group">
+                    <h2 class="section-title luxury-stagger-item">Crafted to Remain With You</h2>
+                    <p class="editorial-sub mt-4" style="editorial-sub mt-4">Every ALA
+                        frame includes lifetime
+                        warranty and long-term maintenance support designed to preserve its structure, finish,
+                        alignment, and material integrity over time.
+                        Accompanying every creation is The Origin — a sculpted wooden object carrying the ALA mark and
+                        crafted from the same philosophy of continuity that defines the frame itself.
+                        Designed to rest within the palm, The Origin represents the beginning of the relationship
+                        between the wearer and the object they carry.
+                        A symbol of authenticity.
+                        Permanence.
+                        Continuity.
+                        Crafted to remain with you.
+                        To evolve with you.
+                        To carry memory through time.
+
+                    </p>
+                    <div class="gold-accent-line"></div>
+
                 </div>
             </div>
-            <div class="container text-center mt-4">
-                <p class="section-body light small">© 2026 ALA Eyewear. All rights reserved.</p>
+
+            <div class="product-image-container"
+                style="position: absolute; top: 0; right: 0; width: 33.33vw; height: 100%; z-index: 1; border-radius: 0; padding: 0; transform: none;">
+                <img src="5.PNG" alt="Wooden Eyewear Texture" class="parallax-img-slow"
+                    style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
+                <div class="lens-reflection"></div>
             </div>
-        </footer>
+        </section>
+        <section class="closing section-pad text-center">
+
+            <section id="ala-profile" class="section-pad bg-warm">
+                <div class="container">
+
+                    <div class="text-center max-w-800" style="margin-bottom:2.5rem;">
+                        <h1 class="section-title">Begin Your ALA</h1>
+                        <p class="editorial-sub mt-4">
+                            Each frame is created through a guided personal process involving material selection,
+                            measurements, customization, and optical refinement.
+                        </p>
+                    </div>
+
+                    <div class="form-wrapper">
+                        <!-- Floating Stickers -->
+
+                        <div class="form-container reveal-up" style="max-width: 600px; margin: 0 auto;">
+                            <div class="form-col">
+                                <div class="form-container-inner" style="width: 100%;">
+                                    <form class="editorial-form">
+                                        <div class="form-group stagger-item">
+                                            <label for="fullName">Full Name</label>
+                                            <input type="text" id="fullName" name="fullName"
+                                                placeholder="Enter your full name" required>
+                                        </div>
+
+                                        <div class="form-group stagger-item">
+                                            <label for="email">Email Address</label>
+                                            <input type="email" id="email" name="email" placeholder="Enter your email"
+                                                required>
+                                        </div>
+
+                                        <div class="form-group stagger-item">
+                                            <label for="phone">Phone Number</label>
+                                            <input type="tel" id="phone" name="phone"
+                                                placeholder="Enter your phone number">
+                                        </div>
+
+                                        <div class="form-group stagger-item">
+                                            <label for="address">Shipping Address</label>
+                                            <textarea id="address" name="address" rows="1"
+                                                placeholder="Enter your full shipping address" required></textarea>
+                                        </div>
+
+                                        <div class="form-group stagger-item">
+                                            <label for="preferences">Material & Detail Preferences</label>
+                                            <textarea id="preferences" name="preferences" rows="1"
+                                                placeholder="e.g., Sandalwood with Gold Inlay"></textarea>
+                                        </div>
+
+                                        <button type="submit" class="btn-editorial stagger-item">Submit
+                                            Request</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <!-- Footer -->
+            <footer class="footer bg-dark text-light pt-8 pb-4">
+                <div class="container grid-2-col align-center pb-4 border-bottom-light">
+                    <div>
+                        <div class="nav-logo text-light">ALA</div>
+                        <p class="section-body light small mt-2">Be the Wave
+                        </p>
+                    </div>
+                    <div class="text-right">
+                        <a href="#" class="btn-ghost">Contact Us</a>
+                    </div>
+                </div>
+                <div class="container text-center mt-4">
+                    <p class="section-body light small">© 2026 ALA Eyewear. All rights reserved.</p>
+                </div>
+            </footer>
     </main>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
 </body>
 
 </html>

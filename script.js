@@ -243,3 +243,72 @@ gsap.utils.toArray(".material-item").forEach((item, i) => {
         }
     );
 });
+
+/* ─────────────────────────────────────────────────────────
+   6. LUXURY PRODUCT SECTION (Custom Animations)
+───────────────────────────────────────────────────────── */
+gsap.utils.toArray(".product-luxury-section, .craft").forEach(section => {
+    // 1. Staggered text reveal
+    const staggerItems = section.querySelectorAll(".luxury-stagger-item");
+    if (staggerItems.length > 0) {
+        gsap.to(staggerItems, {
+            opacity: 1,
+            y: 0,
+            duration: 1.2,
+            stagger: 0.15,
+            ease: "power3.out",
+            scrollTrigger: {
+                trigger: section,
+                start: "top 75%",
+                once: true
+            }
+        });
+    }
+
+    // 2. Gold line draw
+    const goldLine = section.querySelector(".gold-accent-line");
+    if (goldLine) {
+        gsap.to(goldLine, {
+            width: "60px",
+            duration: 1.2,
+            delay: 0.4,
+            ease: "power3.inOut",
+            scrollTrigger: {
+                trigger: section,
+                start: "top 75%",
+                once: true
+            }
+        });
+    }
+
+    // 3. Product image fade and scale
+    const imgContainer = section.querySelector(".product-image-container");
+    if (imgContainer) {
+        gsap.to(imgContainer, {
+            opacity: 1,
+            scale: 1,
+            duration: 1.4,
+            ease: "power2.out",
+            scrollTrigger: {
+                trigger: section,
+                start: "top 75%",
+                once: true
+            }
+        });
+    }
+    
+    // 4. Slower parallax for luxury product image
+    const slowParallaxImg = section.querySelector(".parallax-img-slow");
+    if (slowParallaxImg) {
+        gsap.to(slowParallaxImg, {
+            yPercent: -4, // Slower than the default -6
+            ease: "none",
+            scrollTrigger: {
+                trigger: section,
+                start: "top bottom",
+                end: "bottom top",
+                scrub: 2,
+            }
+        });
+    }
+});
