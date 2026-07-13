@@ -31,14 +31,16 @@
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
-        <div class="nav-logo">ALA</div>
+        <a href="#" class="nav-logo" style="display: flex; align-items: center; padding: 0;">
+            <img src="30.png" alt="ALA Logo" style="height: 130px; width: auto; object-fit: contain;">
+        </a>
         <div class="nav-links">
             <a href="#product">The Product</a>
             <a href="#craft">Craftsmanship</a>
             <a href="#experience">The Experience</a>
             <a href="#bespoke">Custom Creation</a>
         </div>
-        <a href="#ala-profile" class="btn-primary">Bespoke</a>
+
     </nav>
 
     <!-- 3D Cinematic Hero Sequence -->
@@ -46,7 +48,7 @@
         <div class="hero-sticky">
             <!-- Video Background -->
             <video class="hero-video" id="hero-video" muted playsinline preload="auto">
-                <source src="scrolling.mp4" type="video/mp4">
+                <source src="redo1.mp4" type="video/mp4">
             </video>
 
             <!-- Subtle Dark Overlay -->
@@ -64,29 +66,37 @@
 
         <!-- The Product -->
         <section id="product" class="product product-luxury-section bg-warm">
-            <div class="container product-layout">
-                <div class="content-left luxury-stagger-group">
-                    <h2 class="section-title luxury-stagger-item">For Those Who <br>Move the World Around Them</h2>
-                    <p class="editorial-sub mt-4" style="editorial-sub mt-4"
-                        style="color: var(--gold-pale); letter-spacing: 0.05em;">Ala means wave.
-                        A wave moves without asking for attention.
-                        Yet everything around it changes.
-                        Fashion moves like a wave.
-                        Ideas move like a wave.
-                        So do people who leave a mark on the world around them.
-                        ALA is created for those people.
-                        Not simply as eyewear,
-                        but as an extension of presence, identity, and power.
-                        Objects shaped to feel personal the moment they are worn.
-                    </p>
-                    <div class="gold-accent-line"></div>
+            <div class=" container text-center mx-auto luxury-stagger-group"
+                style="max-width: 900px; margin-bottom: 3rem;">
+                <h2 class="section-title luxury-stagger-item" style="margin-bottom: 0;">For Those Who Move the World
+                    Around Them</h2>
+            </div>
 
+            <div class="container grid-2-col align-center">
+                <div class="content-left luxury-stagger-group">
+
+                    <p class="editorial-sub luxury-stagger-item"
+                        style="font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.7; color: var(--text-1); margin-bottom: 2rem; max-width: 550px;">
+                        Ala means wave.A wave moves without asking for attention.Yet everything around it
+                        changes.Fashion moves like a wave. Ideas move like a wave. So do people who leave a mark on the
+                        world around them.Ala is created for those people. Not simply as eyewear, but as an extension of
+                        presence, identity, and power. Objects shaped to feel personal the moment they are worn.
+                    </p>
+                    <div class="gold-accent-line" style="margin-top: 2.5rem;"></div>
                 </div>
+
                 <div class="content-right product-image-wrapper">
-                    <div class="product-image-container">
-                        <img src="2.PNG" alt="Wooden Eyewear Texture"
-                            class="product-luxury-img parallax-img-slow image-pebble-3">
-                        <div class="lens-reflection"></div>
+                    <div class="editorial-composition">
+                        <!-- Main background texture image -->
+                        <div class="composition-bg product-image-container reveal-mask"
+                            style="border-radius: 0; max-height: 65vh; margin-bottom: 0;">
+                            <img src="25 (11).jpg" alt="Wooden Eyewear Texture"
+                                class="product-luxury-img parallax-img-slow"
+                                style="min-height: 50vh; object-fit: cover; width: 100%;">
+
+                        </div>
+                        <!-- Overlapping glasses cutout -->
+
                     </div>
                 </div>
             </div>
@@ -128,14 +138,17 @@
         <!-- Gold -->
 
         <!-- Craftsmanship -->
-        <section id="craft" class="craft section-pad bg-sand">
+        <section id="craft" class="craft section-pad bg-sand" style="background-color: #dfd3c4;">
             <div class="container grid-2-col align-center">
                 <div class="content-left order-2 reveal-mask">
-                    <img src="3.PNG" alt="Craftsmanship detail" class="parallax-img image-pebble-1">
+                    <img src="25 (15).jpg" alt="Craftsmanship detail" class="parallax-img image-pebble-1">
                 </div>
 
                 <div class="content-left luxury-stagger-group">
-                    <h2 class="section-title luxury-stagger-item">Crafted To Be Remembered</h2>
+                    <h2 class="section-title luxury-stagger-item">Crafted To Be Remembered
+
+
+                    </h2>
                     <p class="editorial-sub mt-4" style="editorial-sub mt-4"
                         style="color: var(--gold-pale); letter-spacing: 0.05em;">Wood resists.
                         Shaping it takes years of patience, precision, and understanding.
@@ -159,7 +172,7 @@
         <section class="optics section-pad bg-dark">
             <div class="container text-center max-w-800 reveal-up">
                 <h2 class="section-title" style="color: var(--gold-pale);">A New Wave of Eyewear</h2>
-                <p class="editorial-sub italic mt-2" style="color: var(--gold-pale);">ALA introduces a different
+                <p class="editorial-sub mt-4" style="color: var(--gold-pale);">ALA introduces a different
                     language for eyewear.
                     Natural wood brings warmth, texture, depth, and individuality impossible to replicate artificially.
                     The frame evolves with time.
@@ -173,61 +186,33 @@
         </section>
 
         <!-- The Experience & Materials -->
-        <section id="experience" class="experience section-pad bg-warm">
+        <section id="experience" class="experience section-pad bg-warm" style="background-color: #F8F0E5;">
             <div class="container">
                 <div class="text-center max-w-800 mx-auto reveal-up">
                     <p class="eyebrow">The Woods</p>
                     <h2 class="section-title">Depth, Carved into Form</h2>
                 </div>
 
-                <div class="staggered-layout reveal-up">
-
-                    <div class="staggered-row">
-                        <div class="staggered-img-wrapper">
-                            <img src="rose.png" alt="Rosewood Texture" class="staggered-img parallax-img">
-                        </div>
-                        <div class="staggered-text">
-
-                            <h3>Rosewood</h3>
-                            <p class="editorial-sub mt-4">Rich. Layered. Refined. Rosewood carries darker tonal depth
-                                and intricate grain that
-                                reveal themselves gradually over time. Quiet confidence in its purest form.</p>
-                            <div class="staggered-divider"></div>
-                        </div>
+                <div class="grid-3-col reveal-up mt-4">
+                    <div class="detail-card">
+                        <h4>Rosewood</h4>
+                        <p class="editorial-sub mt-4">Rich. Layered. Refined. Rosewood carries darker tonal depth and
+                            intricate grain that reveal themselves gradually over time. Quiet confidence in its purest
+                            form.</p>
                     </div>
 
-
-                    <div class="staggered-row reverse">
-                        <div class="staggered-img-wrapper">
-                            <img src="forest teek.jpg" alt="Teak Texture" class="staggered-img parallax-img">
-                        </div>
-                        <div class="staggered-text">
-                            <h3>Forest Teak</h3>
-                            <p class="editorial-sub mt-4">Structured. Powerful. Precise.
-                                Forest teak brings density, strength, and architectural clarity to the collection.
-                                Presence without excess.
-                            </p>
-                            <div class="staggered-divider"></div>
-                        </div>
+                    <div class="detail-card">
+                        <h4>Forest Teak</h4>
+                        <p class="editorial-sub mt-4">Structured. Powerful. Precise. Forest teak brings density,
+                            strength, and architectural clarity to the collection. Presence without excess.</p>
                     </div>
 
-                    <div class="staggered-row">
-                        <div class="staggered-img-wrapper">
-                            <img src="sandalwood.jpg" alt="Ebony Texture" class="staggered-img parallax-img">
-                        </div>
-                        <div class="staggered-text">
-                            <h3>Sandalwood</h3>
-                            <p class="editorial-sub mt-4">Warm in tone.
-                                Soft in movement.
-                                Unmistakably alive.
-                                Its flowing grain creates natural rhythm throughout the frame, while its subtle
-                                fragrance emerges gently through wear.
-                                Not applied.
-                                Part of the material itself.
-                                A quiet signature carried by the wearer alone.
-                            </p>
-                            <div class="staggered-divider"></div>
-                        </div>
+                    <div class="detail-card">
+                        <h4>Sandalwood</h4>
+                        <p class="editorial-sub mt-4">Warm in tone. Soft in movement. Unmistakably alive. Its flowing
+                            grain creates natural rhythm throughout the frame, while its subtle fragrance emerges gently
+                            through wear. Not applied. Part of the material itself. A quiet signature carried by the
+                            wearer alone.</p>
                     </div>
                 </div>
             </div>
@@ -238,10 +223,11 @@
 
         <!-- Custom Creation -->
 
-        <section id="craft" class="craft section-pad bg-sand">
+        <section id="craft" class="craft section-pad bg-sand" style="background-color: #dfd3c4;">
             <div class="container grid-2-col align-center">
-                <div class="content-left order-2 reveal-mask">
-                    <img src="6.jpeg" alt="Craftsmanship detail" class="parallax-img image-pebble-1">
+                <div class="content-left order-2 reveal-mask" style="width: 40vw; height: auto; border-radius: 0;">
+                    <img src="25 (7).jpg" alt="Craftsmanship detail" class="parallax-img"
+                        style="aspect-ratio: 5/7; width: 100%; height: auto; object-fit: cover;">
                 </div>
 
                 <div class="content-left luxury-stagger-group">
@@ -262,7 +248,7 @@
             </div>
         </section>
 
-        <section class="product-luxury-section bg-warm" style="padding: 4rem 0;">
+        <section class="product-luxury-section bg-warm" style="padding: 4rem 0; background-color: #F8F0E5;">
             <div class="container text-center max-w-800 mx-auto luxury-stagger-group">
                 <h2 class="section-title luxury-stagger-item">Made for One Person Alone</h2>
                 <p class="editorial-sub mt-4" style="editorial-sub mt-4">Every ALA frame
@@ -284,7 +270,7 @@
         <section class="optics section-pad bg-dark">
             <div class="container text-center max-w-800 reveal-up">
                 <h2 class="section-title" style="color: var(--gold-pale);">Vision, Refined</h2>
-                <p class="editorial-sub italic mt-2" style="color: var(--gold-pale);">Precision extends beyond the
+                <p class="editorial-sub mt-4" style="color: var(--gold-pale);">Precision extends beyond the
                     frame.
                     ALA offers a curated range of premium optical and sun lenses selected for exceptional clarity and
                     visual refinement.
@@ -298,12 +284,12 @@
         <!-- Closing -->
 
         <section id="product" class="product product-luxury-section bg-warm"
-            style="position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding: 4rem 0;">
+            style="position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; padding: 4rem 0; background-color: #dfd3c4;">
             <div class="container"
-                style="width: 55%; margin-left: 8%; margin-right: auto; position: relative; z-index: 2;">
+                style="width: 48%; margin-left: 6%; margin-right: auto; position: relative; z-index: 2;">
                 <div class="luxury-stagger-group">
-                    <h2 class="section-title luxury-stagger-item">Crafted to Remain With You</h2>
-                    <p class="editorial-sub mt-4" style="editorial-sub mt-4">Every ALA
+                    <h2 class="section-title luxury-stagger-item">Crafted to Remain<br> With You</h2>
+                    <p class="editorial-sub mt-4 luxury-stagger-item">Every ALA
                         frame includes lifetime
                         warranty and long-term maintenance support designed to preserve its structure, finish,
                         alignment, and material integrity over time.
@@ -325,15 +311,36 @@
             </div>
 
             <div class="product-image-container"
-                style="position: absolute; top: 0; right: 0; width: 33.33vw; height: 100%; z-index: 1; border-radius: 0; padding: 0; transform: none;">
-                <img src="5.PNG" alt="Wooden Eyewear Texture" class="parallax-img-slow"
+                style="position: absolute; top: 0; right: 0; width: 42vw; height: 100%; z-index: 1; border-radius: 0; padding: 0; transform: none;">
+                <img src="25 (2).jpg" alt="Wooden Eyewear Texture" class="parallax-img-slow"
                     style="width: 100%; height: 100%; object-fit: cover; border-radius: 0;">
-                <div class="lens-reflection"></div>
+
             </div>
         </section>
+
+        <!-- Luxury Gallery Section -->
+        <section class="gallery-section section-pad bg-dark">
+            <div class="container text-center max-w-800 reveal-up" style="margin-bottom: 4rem;">
+                <p class="eyebrow light">The Collection</p>
+                <h2 class="section-title light" style="margin-bottom: 0;">A Visual Narrative</h2>
+            </div>
+            <div class="luxury-gallery reveal-up">
+                <div class="gallery-item large"><img src="25 (2).jpg" alt="Gallery Image 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="25 (3).jpg" alt="Gallery Image 2" loading="lazy"></div>
+                <div class="gallery-item tall"><img src="25 (4).jpg" alt="Gallery Image 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="25 (5).jpg" alt="Gallery Image 4" loading="lazy"></div>
+                <div class="gallery-item wide"><img src="25 (6).jpg" alt="Gallery Image 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="25 (7).jpg" alt="Gallery Image 6" loading="lazy"></div>
+                <div class="gallery-item tall"><img src="25 (9).jpg" alt="Gallery Image 7" loading="lazy"></div>
+                <div class="gallery-item large"><img src="25 (10).jpg" alt="Gallery Image 8" loading="lazy"></div>
+                <div class="gallery-item"><img src="25 (11).jpg" alt="Gallery Image 9" loading="lazy"></div>
+                <div class="gallery-item wide"><img src="25 (12).jpg" alt="Gallery Image 10" loading="lazy"></div>
+            </div>
+        </section>
+
         <section class="closing section-pad text-center">
 
-            <section id="ala-profile" class="section-pad bg-warm">
+            <section id="ala-profile" class="section-pad bg-warm" style="background-color: #F8F0E5;">
                 <div class="container">
 
                     <div class="text-center max-w-800" style="margin-bottom:2.5rem;">
@@ -395,7 +402,10 @@
             <footer class="footer bg-dark text-light pt-8 pb-4">
                 <div class="container grid-2-col align-center pb-4 border-bottom-light">
                     <div>
-                        <div class="nav-logo text-light">ALA</div>
+                        <div class="nav-logo" style="display: flex; align-items: center; padding: 0;">
+                            <img src="logo_transparent.png" alt="ALA Logo"
+                                style="height: 30px; width: auto; object-fit: contain; filter: invert(1);">
+                        </div>
                         <p class="section-body light small mt-2">Be the Wave
                         </p>
                     </div>

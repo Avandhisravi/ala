@@ -8,9 +8,9 @@
    1. SMOOTH SCROLL (Lenis)
 ───────────────────────────────────────────────────────── */
 const lenis = new Lenis({
-    duration: 2.2,
-    easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-    smooth: true,
+    lerp: 0.05,
+    wheelMultiplier: 1.2,
+    smoothWheel: true,
     smoothTouch: false,
 });
 
@@ -60,7 +60,7 @@ if (heroVideo) {
                 trigger: ".hero-sequence",
                 start: "top top",
                 end: "+=300%", // 300% of viewport height gives a nice scroll duration
-                scrub: 1.5,    // Smoothly scrub the video over 1.5 seconds catching up
+                scrub: true,    // Sync instantly with Lenis smooth scroll
                 pin: true,     // Pin the section while scrolling
                 anticipatePin: 1
             }
@@ -211,7 +211,7 @@ gsap.utils.toArray(".parallax-img").forEach(img => {
             trigger: img.closest("section"),
             start: "top bottom",
             end: "bottom top",
-            scrub: 2,
+            scrub: true,
         }
     });
 });
@@ -307,7 +307,7 @@ gsap.utils.toArray(".product-luxury-section, .craft").forEach(section => {
                 trigger: section,
                 start: "top bottom",
                 end: "bottom top",
-                scrub: 2,
+                scrub: true,
             }
         });
     }
