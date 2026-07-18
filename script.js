@@ -248,53 +248,65 @@ gsap.utils.toArray(".material-item").forEach((item, i) => {
    6. LUXURY PRODUCT SECTION (Custom Animations)
 ───────────────────────────────────────────────────────── */
 gsap.utils.toArray(".product-luxury-section, .craft").forEach(section => {
-    // 1. Staggered text reveal
-    const staggerItems = section.querySelectorAll(".luxury-stagger-item");
-    if (staggerItems.length > 0) {
-        gsap.to(staggerItems, {
-            opacity: 1,
-            y: 0,
-            duration: 1.2,
-            stagger: 0.15,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: section,
-                start: "top 75%",
-                once: true
-            }
-        });
-    }
+    // 1. Staggered text reveal per group
+    const staggerGroups = section.querySelectorAll(".luxury-stagger-group");
+    staggerGroups.forEach(group => {
+        const staggerItems = group.querySelectorAll(".luxury-stagger-item");
+        if (staggerItems.length > 0) {
+            gsap.fromTo(staggerItems, 
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1,
+                    y: 0,
+                    duration: 1.2,
+                    stagger: 0.15,
+                    ease: "power3.out",
+                    scrollTrigger: {
+                        trigger: group,
+                        start: "top 85%",
+                        once: true
+                    }
+                }
+            );
+        }
+    });
 
     // 2. Gold line draw
     const goldLine = section.querySelector(".gold-accent-line");
     if (goldLine) {
-        gsap.to(goldLine, {
-            width: "60px",
-            duration: 1.2,
-            delay: 0.4,
-            ease: "power3.inOut",
-            scrollTrigger: {
-                trigger: section,
-                start: "top 75%",
-                once: true
+        gsap.fromTo(goldLine,
+            { width: "0px" },
+            {
+                width: "60px",
+                duration: 1.2,
+                delay: 0.4,
+                ease: "power3.inOut",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                    once: true
+                }
             }
-        });
+        );
     }
 
     // 3. Product image fade and scale
     const imgContainer = section.querySelector(".product-image-container");
     if (imgContainer) {
-        gsap.to(imgContainer, {
-            opacity: 1,
-            scale: 1,
-            duration: 1.4,
-            ease: "power2.out",
-            scrollTrigger: {
-                trigger: section,
-                start: "top 75%",
-                once: true
+        gsap.fromTo(imgContainer,
+            { opacity: 0, scale: 0.95 },
+            {
+                opacity: 1,
+                scale: 1,
+                duration: 1.4,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 85%",
+                    once: true
+                }
             }
-        });
+        );
     }
     
     // 4. Slower parallax for luxury product image
