@@ -338,85 +338,192 @@
             </div>
         </section>
 
-        <section class="closing section-pad text-center">
+        <section id="ala-profile" class="section-pad bg-warm" style="background-color: #dfd3c4;">
+            <div class="container">
 
-            <section id="ala-profile" class="section-pad bg-warm" style="background-color: #F8F0E5;">
-                <div class="container">
+                <div class="text-center max-w-800" style="margin-bottom:2.5rem;">
+                    <h1 class="section-title">Before the Artefact Finds Its Owner</h1>
 
-                    <div class="text-center max-w-800" style="margin-bottom:2.5rem;">
-                        <h1 class="section-title">Begin Your ALA</h1>
-                        <p class="editorial-sub mt-4">
-                            Each frame is created through a guided personal process involving material selection,
-                            measurements, customization, and optical refinement.
-                        </p>
-                    </div>
+                    <p class="editorial-sub mt-4">
+                        We seek to understand the vision behind the eyes.
+                        Every ALA creation begins not with measurements,
+                        but with understanding the person who will wear it.
+                    </p>
+                </div>
 
-                    <div class="form-wrapper">
-                        <!-- Floating Stickers -->
+                <div class="luxury-config-container reveal-up">
+                    <form class="editorial-form">
 
-                        <div class="form-container reveal-up" style="max-width: 600px; margin: 0 auto;">
-                            <div class="form-col">
-                                <div class="form-container-inner" style="width: 100%;">
-                                    <form class="editorial-form">
-                                        <div class="form-group stagger-item">
-                                            <label for="fullName">Full Name</label>
-                                            <input type="text" id="fullName" name="fullName"
-                                                placeholder="Enter your full name" required>
-                                        </div>
+                        <!-- Personal Details (Outside Accordion for easy access) -->
+                        <div class="config-personal-details">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
 
-                                        <div class="form-group stagger-item">
-                                            <label for="email">Email Address</label>
-                                            <input type="email" id="email" name="email" placeholder="Enter your email"
-                                                required>
-                                        </div>
-
-                                        <div class="form-group stagger-item">
-                                            <label for="phone">Phone Number</label>
-                                            <input type="tel" id="phone" name="phone"
-                                                placeholder="Enter your phone number">
-                                        </div>
-
-                                        <div class="form-group stagger-item">
-                                            <label for="address">Shipping Address</label>
-                                            <textarea id="address" name="address" rows="1"
-                                                placeholder="Enter your full shipping address" required></textarea>
-                                        </div>
-
-                                        <div class="form-group stagger-item">
-                                            <label for="preferences">Material & Detail Preferences</label>
-                                            <textarea id="preferences" name="preferences" rows="1"
-                                                placeholder="e.g., Sandalwood with Gold Inlay"></textarea>
-                                        </div>
-
-                                        <button type="submit" class="btn-editorial stagger-item">Submit
-                                            Request</button>
-                                    </form>
+                        <!-- Accordion Q1 -->
+                        <div class="config-accordion-item">
+                            <div class="config-accordion-header">
+                                <span>1. When you acquire something, what do you seek first?</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" />
+                                </svg>
+                            </div>
+                            <div class="config-accordion-content">
+                                <div class="config-options-grid">
+                                    <label class="config-chip"><input type="radio" name="q1" value="Recognition"
+                                            class="config-radio"><span class="chip-label">Recognition</span></label>
+                                    <label class="config-chip"><input type="radio" name="q1" value="Beauty"
+                                            class="config-radio"><span class="chip-label">Beauty</span></label>
+                                    <label class="config-chip"><input type="radio" name="q1" value="Meaning"
+                                            class="config-radio"><span class="chip-label">Meaning</span></label>
+                                    <label class="config-chip"><input type="radio" name="q1" value="Legacy"
+                                            class="config-radio"><span class="chip-label">Legacy</span></label>
                                 </div>
                             </div>
                         </div>
-                    </div>
 
-                </div>
-            </section>
-            <!-- Footer -->
-            <footer class="footer bg-dark text-light pt-8 pb-4">
-                <div class="container grid-2-col align-center pb-4 border-bottom-light">
-                    <div>
-                        <div class="nav-logo" style="display: flex; align-items: center; padding: 0;">
-                            <img src="logo_transparent.png" alt="ALA Logo"
-                                style="height: 30px; width: auto; object-fit: contain; filter: invert(1);">
+                        <!-- Accordion Q2 -->
+                        <div class="config-accordion-item">
+                            <div class="config-accordion-header">
+                                <span>2. What defines true luxury to you?</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" />
+                                </svg>
+                            </div>
+                            <div class="config-accordion-content">
+                                <div class="config-options-grid">
+                                    <label class="config-chip"><input type="radio" name="q2" value="Rarity"
+                                            class="config-radio"><span class="chip-label">Rarity</span></label>
+                                    <label class="config-chip"><input type="radio" name="q2" value="Craftsmanship"
+                                            class="config-radio"><span class="chip-label">Craftsmanship</span></label>
+                                    <label class="config-chip"><input type="radio" name="q2" value="Story"
+                                            class="config-radio"><span class="chip-label">Story</span></label>
+                                    <label class="config-chip"><input type="radio" name="q2" value="Permanence"
+                                            class="config-radio"><span class="chip-label">Permanence</span></label>
+                                </div>
+                            </div>
                         </div>
-                        <p class="section-body light small mt-2">Be the Wave
-                        </p>
-                    </div>
-                    <div class="text-right">
-                        <a href="#" class="btn-ghost">Contact Us</a>
+
+                        <!-- Accordion Q3 -->
+                        <div class="config-accordion-item">
+                            <div class="config-accordion-header">
+                                <span>3. Do you prefer things that...</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" />
+                                </svg>
+                            </div>
+                            <div class="config-accordion-content">
+                                <div class="config-options-grid">
+                                    <label class="config-chip"><input type="radio" name="q3" value="Follow the world"
+                                            class="config-radio"><span class="chip-label">Follow the
+                                            world</span></label>
+                                    <label class="config-chip"><input type="radio" name="q3" value="Stand apart from it"
+                                            class="config-radio"><span class="chip-label">Stand apart from
+                                            it</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Q4 -->
+                        <div class="config-accordion-item">
+                            <div class="config-accordion-header">
+                                <span>4. What would you rather own?</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" />
+                                </svg>
+                            </div>
+                            <div class="config-accordion-content">
+                                <div class="config-options-grid">
+                                    <label class="config-chip"><input type="radio" name="q4"
+                                            value="Something valuable today" class="config-radio"><span
+                                            class="chip-label">Something valuable today</span></label>
+                                    <label class="config-chip"><input type="radio" name="q4"
+                                            value="Something meaningful for generations" class="config-radio"><span
+                                            class="chip-label">Something meaningful for generations</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Accordion Q5 -->
+                        <div class="config-accordion-item">
+                            <div class="config-accordion-header">
+                                <span>5. When you see a creation, what do you notice first?</span>
+                                <svg class="chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path d="M6 9l6 6 6-6" />
+                                </svg>
+                            </div>
+                            <div class="config-accordion-content">
+                                <div class="config-options-grid">
+                                    <label class="config-chip"><input type="radio" name="q5" value="The name behind it"
+                                            class="config-radio"><span class="chip-label">The name behind
+                                            it</span></label>
+                                    <label class="config-chip"><input type="radio" name="q5"
+                                            value="The hand that created it" class="config-radio"><span
+                                            class="chip-label">The hand that created it</span></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Static Q6 (Textarea) -->
+                        <div class="config-static-item"
+                            style="border-bottom: 1px solid rgba(166, 141, 113, 0.15); margin-bottom: 0.5rem; padding-bottom: 1.5rem;">
+                            <div class="config-static-header"
+                                style="padding: 1.5rem 0 1rem 0; font-family: var(--font-serif); font-size: 1.25rem; color: var(--text-1);">
+                                <span>6. What qualities do you look for before allowing something to become part of your
+                                    life?</span>
+                            </div>
+                            <div class="config-textarea-wrapper">
+                                <textarea id="qualities" name="qualities" rows="3"
+                                    placeholder="Share your thoughts..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-submit-wrapper">
+                            <button type="submit" class="btn-config-submit">
+                                Your Vision Has Been Understood
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer class="footer bg-dark text-light pt-8 pb-4">
+            <div class="container grid-2-col align-center pb-4 border-bottom-light">
+                <div>
+                    <div class="nav-logo"
+                        style="display:flex; flex-direction:column; align-items:flex-start; padding:0; margin-top:-40px;">
+
+                        <img src="30.png" alt="ALA Logo"
+                            style="height:180px; width:auto; object-fit:contain; filter:invert(1); margin-left:-40px;">
+
+                        <div class="footer-wave">
+                            <div class="footer-tagline" style="color: #ffffff; font-size: 0.85rem; letter-spacing: 0.15em;">BE THE WAVE</div>
+                        </div>
+
                     </div>
                 </div>
-                <div class="container text-center mt-4">
-                    <p class="section-body light small">© 2026 ALA Eyewear. All rights reserved.</p>
+                <div class="text-right">
+                    <a href="#" class="btn-ghost">Contact Us</a>
                 </div>
-            </footer>
+            </div>
+            <div class="container text-center mt-4">
+                <p class="section-body light small">© 2026 ALA Eyewear. All rights reserved.</p>
+            </div>
+        </footer>
     </main>
 
     <script src="script.js?v=2"></script>

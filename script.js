@@ -324,3 +324,66 @@ gsap.utils.toArray(".product-luxury-section, .craft").forEach(section => {
         });
     }
 });
+
+/* ─────────────────────────────────────────────────────────
+   7. LUXURY CONFIGURATOR (ACCORDION & AUTO-ADVANCE)
+───────────────────────────────────────────────────────── */
+const accordions = document.querySelectorAll('.config-accordion-item');
+
+if (accordions.length > 0) {
+    // Open the first accordion by default
+    accordions[0].classList.add('active');
+    const firstContent = accordions[0].querySelector('.config-accordion-content');
+    if (firstContent) {
+        firstContent.style.maxHeight = firstContent.scrollHeight + "px";
+    }
+
+    accordions.forEach((acc, index) => {
+        const header = acc.querySelector('.config-accordion-header');
+        const content = acc.querySelector('.config-accordion-content');
+
+        header.addEventListener('click', () => {
+            const isActive = acc.classList.contains('active');
+
+            // Close all
+            accordions.forEach(otherAcc => {
+                otherAcc.classList.remove('active');
+                const otherContent = otherAcc.querySelector('.config-accordion-content');
+                if (otherContent) otherContent.style.maxHeight = null;
+            });
+
+            // Toggle current
+            if (!isActive) {
+                acc.classList.add('active');
+                if (content) content.style.maxHeight = content.scrollHeight + "px";
+            }
+        });
+
+        // Auto-advance on radio selection
+        const radios = acc.querySelectorAll('.config-radio');
+        radios.forEach(radio => {
+            radio.addEventListener('change', () => {
+                // Wait a brief moment to show the selection color change, then advance
+                setTimeout(() => {
+                    acc.classList.remove('active');
+                    if (content) content.style.maxHeight = null;
+
+                    const nextAcc = accordions[index + 1];
+                    if (nextAcc) {
+                        nextAcc.classList.add('active');
+                        const nextContent = nextAcc.querySelector('.config-accordion-content');
+                        if (nextContent) nextContent.style.maxHeight = nextContent.scrollHeight + "px";
+                        
+                        // Scroll slightly to bring next into view if needed
+                        const offset = nextAcc.getBoundingClientRect().top + window.scrollY - 150;
+                        if(typeof lenis !== 'undefined') {
+                            lenis.scrollTo(offset, { duration: 1 });
+                        } else {
+                            window.scrollTo({top: offset, behavior: 'smooth'});
+                        }
+                    }
+                }, 400); // 400ms delay for smooth transition
+            });
+        });
+    });
+}
