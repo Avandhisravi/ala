@@ -132,18 +132,18 @@ if (cursor && cursorFollower) {
 
     let xSetterCursor = gsap.quickSetter(cursor, "x", "px");
     let ySetterCursor = gsap.quickSetter(cursor, "y", "px");
-    
-    let xToFollower = gsap.quickTo(cursorFollower, "x", {duration: 0.6, ease: "power3"});
-    let yToFollower = gsap.quickTo(cursorFollower, "y", {duration: 0.6, ease: "power3"});
+
+    let xToFollower = gsap.quickTo(cursorFollower, "x", { duration: 0.6, ease: "power3" });
+    let yToFollower = gsap.quickTo(cursorFollower, "y", { duration: 0.6, ease: "power3" });
 
     window.addEventListener("mousemove", (e) => {
         xSetterCursor(e.clientX);
         ySetterCursor(e.clientY);
-        
+
         xToFollower(e.clientX);
         yToFollower(e.clientY);
     });
-    
+
     // Add hover effect for interactive elements
     const interactives = document.querySelectorAll("a, button, input, select, textarea");
     interactives.forEach(el => {
@@ -173,19 +173,31 @@ ScrollTrigger.create({
 /* ─────────────────────────────────────────────────────────
    5. CONTENT SECTIONS — Scroll Reveal
 ───────────────────────────────────────────────────────── */
+gsap.utils.toArray(".luxury-stagger-group").forEach(group => {
 
-// Fade + rise for text elements
-gsap.utils.toArray(".reveal-up").forEach(el => {
-    gsap.fromTo(el,
-        { opacity: 0, y: 55 },
+    const items = group.querySelectorAll(
+        ".section-title, .editorial-sub, .eyebrow, .gold-accent-line, h2, h4, p"
+    );
+
+    gsap.fromTo(items, 
+        { opacity: 0, y: 35 },
         {
-            opacity: 1, y: 0,
-            duration: 1.4,
+            opacity: 1,
+            y: 0,
+            duration: 1.1,
+            stagger: 0.15,
             ease: "power3.out",
-            scrollTrigger: { trigger: el, start: "top 88%", once: true }
+            scrollTrigger: {
+                trigger: group,
+                start: "top 82%",
+                once: true
+            }
         }
     );
+
 });
+// Fade + rise for text elements
+
 
 // Image reveal — scale from 1.08 to 1
 gsap.utils.toArray(".reveal-mask").forEach(mask => {
@@ -217,59 +229,16 @@ gsap.utils.toArray(".parallax-img").forEach(img => {
 });
 
 // Stagger the 3 bespoke detail cards
-gsap.utils.toArray(".detail-card").forEach((card, i) => {
-    gsap.fromTo(card,
-        { opacity: 0, y: 40 },
-        {
-            opacity: 1, y: 0,
-            duration: 1.1,
-            delay: i * 0.15,
-            ease: "power3.out",
-            scrollTrigger: { trigger: card, start: "top 90%", once: true }
-        }
-    );
-});
+
 
 // Stagger material items
-gsap.utils.toArray(".material-item").forEach((item, i) => {
-    gsap.fromTo(item,
-        { opacity: 0, x: 30 },
-        {
-            opacity: 1, x: 0,
-            duration: 0.9,
-            delay: i * 0.12,
-            ease: "power2.out",
-            scrollTrigger: { trigger: item, start: "top 90%", once: true }
-        }
-    );
-});
 
 /* ─────────────────────────────────────────────────────────
    6. LUXURY PRODUCT SECTION (Custom Animations)
 ───────────────────────────────────────────────────────── */
 gsap.utils.toArray(".product-luxury-section, .craft").forEach(section => {
     // 1. Staggered text reveal per group
-    const staggerGroups = section.querySelectorAll(".luxury-stagger-group");
-    staggerGroups.forEach(group => {
-        const staggerItems = group.querySelectorAll(".luxury-stagger-item");
-        if (staggerItems.length > 0) {
-            gsap.fromTo(staggerItems, 
-                { opacity: 0, y: 30 },
-                {
-                    opacity: 1,
-                    y: 0,
-                    duration: 1.2,
-                    stagger: 0.15,
-                    ease: "power3.out",
-                    scrollTrigger: {
-                        trigger: group,
-                        start: "top 85%",
-                        once: true
-                    }
-                }
-            );
-        }
-    });
+
 
     // 2. Gold line draw
     const goldLine = section.querySelector(".gold-accent-line");
@@ -308,7 +277,7 @@ gsap.utils.toArray(".product-luxury-section, .craft").forEach(section => {
             }
         );
     }
-    
+
     // 4. Slower parallax for luxury product image
     const slowParallaxImg = section.querySelector(".parallax-img-slow");
     if (slowParallaxImg) {
@@ -373,13 +342,13 @@ if (accordions.length > 0) {
                         nextAcc.classList.add('active');
                         const nextContent = nextAcc.querySelector('.config-accordion-content');
                         if (nextContent) nextContent.style.maxHeight = nextContent.scrollHeight + "px";
-                        
+
                         // Scroll slightly to bring next into view if needed
                         const offset = nextAcc.getBoundingClientRect().top + window.scrollY - 150;
-                        if(typeof lenis !== 'undefined') {
+                        if (typeof lenis !== 'undefined') {
                             lenis.scrollTo(offset, { duration: 1 });
                         } else {
-                            window.scrollTo({top: offset, behavior: 'smooth'});
+                            window.scrollTo({ top: offset, behavior: 'smooth' });
                         }
                     }
                 }, 400); // 400ms delay for smooth transition
