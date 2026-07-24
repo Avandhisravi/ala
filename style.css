@@ -1813,18 +1813,23 @@ img {
     justify-content: space-between;
     gap: 4rem;
 }
+
 .asymmetric-left {
     width: 45%;
 }
+
 .asymmetric-right {
     width: 50%;
 }
+
 @media (max-width: 900px) {
     .asymmetric-layout {
         flex-direction: column;
         gap: 3rem;
     }
-    .asymmetric-left, .asymmetric-right {
+
+    .asymmetric-left,
+    .asymmetric-right {
         width: 100% !important;
     }
 }
@@ -2010,5 +2015,64 @@ img {
     .config-personal-details {
         grid-template-columns: 1fr;
         gap: 1rem;
+    }
+}
+
+.gallery-section {
+    background: #0b0b0b;
+    padding: 82px 0 115px 0;
+    overflow: hidden;
+}
+
+.gallery-heading {
+    text-align: center;
+    margin-bottom: 83px;
+}
+
+.horizontal-gallery {
+    width: 100%;
+    overflow: hidden;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: scrollGallery 35s linear infinite;
+}
+
+.gallery-track:hover {
+    animation-play-state: paused;
+}
+
+.gallery-card {
+    width: 280px;
+    /* Smaller width */
+    height: 380px;
+    /* Same height for every image */
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 16px;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: .5s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+@keyframes scrollGallery {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
     }
 }
